@@ -1,0 +1,11 @@
+(Deftemplate cliente(slot id(type INTEGER)) (slot name(type STRING)) (slot mail(type STRING)) (slot phone(type STRING)))
+
+(deftemplate producto (slot marca(type STRING)) (slot modelo (type STRING))(slot memory(type  INTEGER))(slot price(type FLOAT)(slot stock(type(INTEGER)))
+
+(defrule agregar-cliente (not (cliente (id ?))) => (assert (cliente (id 1) (name"Carlos Botello ") (mail"carlosbot10@gmail.com") (phone"338986754"))) (assert (cliente (id 2) (name Pedro paramo") (mail"pedrito@hotmail.com") (phone"39076543"))) (assert (cliente (id 3) (name"juan sanchez") (mail"juansan@hotmail.com") (phone"45765420")))) 
+
+(defrule agregar-productos (not (producto (marca ?))) => (assert (producto (marca "tcl") (modelo "10L") (memory 128gb) (price 6999) (stock30))) (assert (producto (marca "Xiaomi ") (modelo "Redmi note 10plus") (memory 128 gb) (price 5999) (stock 24))) (assert (producto (marca "Huawei") (modelo "p smart") (memory 64 gb) (price 3999) (stock 0))) (assert (producto (marca " Asus") (modelo "Laptop k200") (memory 1024gb) (price 8999) (stock 15))))
+
+(deftemplate tarjeta (slot nombre (type STRING)) (slot tasa (type FLOAT)) (slot limite (type FLOAT)))
+
+(defrule agregar-tarjetas (not (tarjeta (nombre ?))) => (assert (tarjeta (nombre "master card") (tasa15.0) (limite10000))) (assert (tarjeta (nombre "banco azteca") (tasa30.0) (limite 2000))) (assert (tarjeta (nombre "American Express") (tasa5.0) (limite 100000))))
